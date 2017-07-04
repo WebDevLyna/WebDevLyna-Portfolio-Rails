@@ -1,0 +1,37 @@
+
+
+
+
+
+<div id="about_background" class="wrapper wrapper_padding clearfix">
+	<div id="welcome_panel" class="col-xs-12 about homepage_content">
+		<h2>About</h2>
+		<hr>
+      <p>I am a well-rounded Junior Full-Stack Web Developer. My passion is current on the front-end.</p>
+      <p>Some of my other passions are cooking, music, video games, technology, and traveling.</p>
+      <p>I started my journey of media at Humber College and expanded my learning at Bitmaker, focusing on Full-Stack Web Development.</p>
+      <p>My ideal working environment: good culture, offer solid support/mentorship, and provide room for growth professionally and personally.</p>
+      <p>You can find my <a href="https://profiles.bitmaker.co/students/lyna-nguyen">Bitmaker Profile</a> along with my Resume and Social Media links (or can see below in the footer).</p>
+      <%= link_to image_tag("bitmaker.png"), "https://profiles.bitmaker.co/students/lyna-nguyen" %>
+  </div>
+  <br>
+  <br>
+	<div class="col-2 homepage_content">
+		<h2>Stuff I've Written</h2>
+		<hr>
+		<% @posts.each do |post| %>
+			<h3><a href="#"><%= link_to post.title, post %></a></h3>
+			<p class="date"><%= post.created_at.strftime("%A, %b %d %Y") %></p>
+		<% end %>
+  </div>
+  <br>
+  <br>
+  <div class="col-2 homepage_content">
+    <h2>Stuff I've Built</h2>
+    <hr>
+    <% @projects.each do |project| %>
+      <h3><a href="#"><%= link_to project.title, project %></a></h3>
+      <p class="date"><%= project.created_at.strftime("%A, %b %d %Y") %></p>
+    <% end %>
+  </div>
+</div>
